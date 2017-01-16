@@ -1,9 +1,30 @@
 <html>
 <head>
- <title>Demo of building a page on codeanywhere</title>
- </head>
- <body>
-<h1>Hello world!</h1>
-<h2><a href=" https://www.youtube.com" target=_top>Youtube.com</a></h2>
+<script>
+function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML =
+    h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+</script>
+</head>
+
+<body onload="startTime()">
+
+<div id="txt"></div>
+<h1>
+ ^^^ Maybe you should check the time
+  </h1>
+  
 </body>
 </html>
